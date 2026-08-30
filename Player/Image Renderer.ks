@@ -23,7 +23,7 @@ local test to g:addlabel().
     set test:style:normal:bg to "".
 
 
-set file_path to "GUI TESTS/BAD_APPLE/0000".
+set file_path to "BAD_APPLE/0000".
 animate(10,1,6572,0,450,10000,false).
 
 function animation {
@@ -36,21 +36,18 @@ function animate {
     parameter offset, anim_start, anim_end, start, end, duration, continuous.
 
     local animationTime to 0.
-    local Time_Duration to 0.
+    local Time_Duration to 0.019.
     local phase to 2.
 
     until animationTime = duration {
         clearscreen.
-        set Time_Duration to Time_Duration + 0.019.
-        print "Duration: " + round(Time_Duration) + " | " + duration.
-        print "Anim Frame: " + anim_start.
 
         if anim_start >= 10 and anim_start < 100 {
-            set file_path to "GUI TESTS/BAD_APPLE/000".
+            set file_path to "BAD_APPLE/000".
         } else if anim_start >= 100 and anim_start < 1000 {
-            set file_path to "GUI TESTS/BAD_APPLE/00".
+            set file_path to "BAD_APPLE/00".
         } else if anim_start >= 1000 {
-                set file_path to "GUI TESTS/BAD_APPLE/0".
+                set file_path to "BAD_APPLE/0".
             }
 
         if phase = 1 {
@@ -83,7 +80,7 @@ function animate {
             }
 
             set anim_start to anim_start + 1.
-            wait 0.019.
+            wait Time_Duration.
         }
     }
     
