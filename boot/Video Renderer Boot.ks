@@ -1,2 +1,2 @@
-runoncepath("0:/GUI SCRIPTS/Test.ks").
+runoncepath("0:/Player/Test.ks").
 
